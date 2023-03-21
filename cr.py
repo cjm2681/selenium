@@ -13,7 +13,7 @@ URL = 'https://www.google.co.kr/imghp'
 driver.get(url=URL)
 driver.implicitly_wait(time_to_wait=10)
 keyElement = driver.find_element(By.NAME, "q")
-keyElement.send_keys('빨간구두')
+keyElement.send_keys('운동화')
 keyElement.send_keys(Keys.RETURN)
 
 
@@ -44,3 +44,6 @@ for image in images:
 
 for seq, urlImg in enumerate(imageURL):
     urllib.request.urlretrieve(urlImg, 'C:/open/' + str(seq) + '.jpg')
+    
+    if seq > 30:
+        break
